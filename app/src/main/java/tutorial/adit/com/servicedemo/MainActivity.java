@@ -27,13 +27,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("onclick status",""+mServiceBound);
+
                 if (mServiceBound) {
                     timestampText.setText(mBoundService.getTimestamp());
                 }
             }
         });
 
-        
+
 
         stopServiceButon.setOnClickListener(new View.OnClickListener()
         {
@@ -77,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            Log.d("service","connected");
+            Log.d("service","connected to "+name.toShortString() );
+
             BoundService.MyBinder myBinder = (BoundService.MyBinder) service;
             mBoundService = myBinder.getService();
             mServiceBound = true;

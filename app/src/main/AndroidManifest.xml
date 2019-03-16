@@ -17,10 +17,9 @@
             </intent-filter>
         </activity>
 
-        <service
-            android:name=".MyBinder"
-            android:enabled="true"
-            android:exported="true"></service>
+        <service android:name=".BoundService"/>
     </application>
+
+
 
 </manifest>
